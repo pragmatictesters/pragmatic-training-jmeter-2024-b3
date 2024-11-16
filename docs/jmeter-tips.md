@@ -22,4 +22,21 @@ By default, JMeter's CA certificates are valid for **7 days**. Follow these step
 4. **Start the JMeter Proxy**: A new CA certificate with updated validity will be generated.
 
 
+Here’s the markdown for Tip #2:
+
+
+## Tip #2: Enabling Undo in JMeter
+
+JMeter's undo feature is **disabled by default**, as it may cause performance issues with large test plans (`.jmx` files). To enable it:
+
+1. **Update configuration**: Open `user.properties` and add the following line:
+   ```
+   undo.history.size=25
+   ```
+   (Set the history size as needed. For example, `25` allows undoing up to 25 actions.)
+2. **Restart JMeter**: Relaunch the application to activate the undo feature.
+
+Note: Use cautiously if working with large `.jmx` files. 🚀
+
+
 Quick and effective! 🚀
