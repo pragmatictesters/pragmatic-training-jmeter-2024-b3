@@ -7,6 +7,34 @@
 # BlueJ files
 *.ctxt
 
+# Temporary files
+*.tmp
+*.temp
+
+# IDE specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Build directories
+/bin/
+/build/
+/out/
+
+# JMeter specific files
+output.jtl
+results.jtl
+*.bak
+*.sav
+*.lck
+
+# Operating system files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -22,3 +50,9 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# Ignore everything inside apache-jmeter-5.6.3 folder
+/apache-jmeter-5.6.3/*
+
+# Optional: Keep an empty folder using .gitkeep (if needed)
+!/apache-jmeter-5.6.3/.gitkeep
