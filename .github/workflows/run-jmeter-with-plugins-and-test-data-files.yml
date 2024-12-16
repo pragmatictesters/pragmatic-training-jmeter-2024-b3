@@ -24,8 +24,6 @@ jobs:
           tar -xvzf apache-jmeter-5.6.3.tgz
           mv apache-jmeter-5.6.3 ~/jmeter
 
-      - name: Install dos2unix
-        run: sudo apt-get update && sudo apt-get install -y dos2unix
 
       # Step 3: Run JMeter test plan with test data (CSV) and a plugin
       - name: Run JMeter test plan
