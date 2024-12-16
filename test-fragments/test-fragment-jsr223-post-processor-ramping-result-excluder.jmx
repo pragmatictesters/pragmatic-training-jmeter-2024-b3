@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Test Fragment" enabled="false"/>
+    <hashTree>
+      <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor : Ramp-Up/Down Results Excluder">
+        <stringProp name="cacheKey">false</stringProp>
+        <stringProp name="filename"></stringProp>
+        <stringProp name="parameters">${__P(ignore_ramping_time_results,true)}  ${__P(testResultToIgnoreBeforeInMin,5)} ${__P(testResultToIgnoreAfterInMin,35)}</stringProp>
+        <stringProp name="script">if (args[0].toBoolean()) {
+    int ignoreResultsBeforeInMin = args[1].toInteger()
+    int ignoreResultsAfterInMin = args[2].toInteger()
+
+    long ignoreResultsBeforeInMillis = ignoreResultsBeforeInMin * 60 * 1000
+    long ignoreResultsAfterInMillis = ignoreResultsAfterInMin * 60 * 1000
+
+    long testStartTimeInMillis = vars.get(&quot;TESTSTART.MS&quot;).toLong()
+    long currentSampleTimeInMillis = prev.getEndTime()
+    long elapsedTestTimeInMillis = currentSampleTimeInMillis - testStartTimeInMillis
+
+    log.info(&quot;Elapsed Test Time (ms): ${elapsedTestTimeInMillis}&quot;)
+    
+    if (elapsedTestTimeInMillis &lt; ignoreResultsBeforeInMillis || 
+        elapsedTestTimeInMillis &gt; ignoreResultsAfterInMillis) {
+        prev.setIgnore()
+        log.info(&quot;Ignoring result for sample: ${prev.getSampleLabel()}&quot;)
+    }
+}</stringProp>
+        <stringProp name="scriptLanguage">groovy</stringProp>
+      </JSR223PostProcessor>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
