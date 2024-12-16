@@ -4410,7 +4410,7 @@ try {
         <RecordingController guiclass="RecordController" testclass="RecordingController" testname="Recording Controller" enabled="false"/>
         <hashTree/>
       </hashTree>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -4501,7 +4501,7 @@ try {
         <stringProp name="ProxyControlGui.domains">opensource-demo.orangehrmlive.com</stringProp>
       </ProxyControl>
       <hashTree>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -4537,7 +4537,7 @@ try {
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">/Users/janeshkodikara/recording-orange5.xml</stringProp>
+          <stringProp name="filename">/Users/janeshkodikara/Downloads/jmeter-test-results/results.jtl</stringProp>
           <stringProp name="TestPlan.comments">:token=&quot;&amp;quot;de7f30e93e92aee1b03.kkntcKRisaw5LE1815GXA7khF4RjKyfREZpKFxKEdOg.3RiqPMVT1f5PRAkrh-fPc4FXRLcEcmqFdvENInrgBJvgONhG9jCD_3saAA&amp;quot;&quot;
 
 
