@@ -279,7 +279,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">~/test-results/test-results-${__time(YMDHMS,)}.xml</stringProp>
+          <stringProp name="filename">./results/test-results-${__time(YMDHMS,)}.xml</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
