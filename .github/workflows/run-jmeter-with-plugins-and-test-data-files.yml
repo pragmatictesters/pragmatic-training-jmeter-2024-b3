@@ -34,7 +34,7 @@ jobs:
           # Ensure file is readable
           chmod 644 ~/jmeter/bin/personal-info.csv
           # Convert to Unix-style line endings (just in case)
-          dos2unix ~/jmeter/bin/personal-info.csv
+          #dos2unix ~/jmeter/bin/personal-info.csv
           # Copy the plugin to JMeter plugins directory
           cp lib/jmeter-plugins-dummy-0.4.jar ~/jmeter/lib/ext/
           # Verify file placement (debugging step)
