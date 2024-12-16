@@ -30,7 +30,8 @@ jobs:
           mkdir -p results
           cp test-data/personal-info.csv ~/jmeter/bin/
           cp lib/jmeter-plugins-dummy-0.4.jar ~/jmeter/lib/ext/
-          ls ~/jmeter/bin
+          chmod 644 ~/jmeter/bin/personal-info.csv
+          ls -al ~/jmeter/bin
           ~/jmeter/bin/jmeter -n -t test-plans/test-plan-example-data-driven-test.jmx -l results/results-ddt.jtl -j results/jmeter-ddt.log
 
       # Step 4: Save results as artifacts
