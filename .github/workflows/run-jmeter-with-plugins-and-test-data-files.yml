@@ -1,4 +1,4 @@
-name: Run JMeter Tests
+name: Run JMeter Tests with Test Data and Plugins
 
 on:
   push:
