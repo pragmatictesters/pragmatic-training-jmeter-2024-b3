@@ -29,3 +29,25 @@
 - It is important to **share the test data files** along with the test plans to ensure the test can be executed seamlessly.
   - The absence of necessary test data files can lead to broken test plans or missing functionality during execution.
   - Providing a README or notes on the structure and content of the test data is also helpful for better collaboration and understanding of the test plan.
+
+#### 6. Limiting Test Results Fields for Optimization
+- It is not necessary to save all test result fields in **CSV** and **XML** formats, especially in production environments. Limiting the saved fields reduces resource usage and improves JMeter's performance. Below are some fields that can be **omitted**:
+
+  **For CSV**:
+  - `latency` (unless specifically required for analysis)
+  - `bytes` (if response size is not being monitored)
+  - `sentBytes`
+  - `threadName`
+  - `grpThreads` (number of active threads in the group)
+  - `allThreads` (total active threads)
+
+  **For XML**:
+  - `<assertionResults>` (unless debugging assertion failures)
+  - `<responseData>` (if the actual response is not needed)
+  - `<responseHeader>` (if headers are not being analyzed)
+  - `<requestHeaders>` (if the request header details are not critical)
+  - `<subResults>` (if sub-samples are not required)
+
+- **Save Errors Only**:
+  - For debugging purposes, enable the **"Save Errors Only"** option in listeners. This ensures that only failed requests are saved, reducing unnecessary data collection and resource consumption.
+  - Use this option sparingly, ideally only during debugging or when identifying errors, as saving errors only might omit essential metrics for successful transactions during detailed analysis.
